@@ -17,7 +17,7 @@ export const Services = forwardRef<HTMLElement>(function Services(props, ref) {
           />
           <ServiceCard
             title="Puppy Training"
-            description="Start your puppy off right with early socialization and training."
+            description="Start your puppy off on the right paw with early socialization and training."
           />
         </div>
       </div>
