@@ -25,7 +25,7 @@ export function Testimonials() {
   function TestimonialCard({ quote, author }: { quote: string; author: string }) {
     return (
       <div className="flex flex-col items-center space-y-2 border-gray-200 dark:border-gray-700 p-4 rounded-lg">
-        <p className="text-sm text-gray-500 dark:text-gray-400 italic">"{quote}"</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400 italic">&ldquo;{quote}&rdquo;</p>
         <p className="text-sm font-bold">- {author}</p>
       </div>
     )
