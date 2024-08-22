@@ -7,6 +7,7 @@ import { Services } from '@/components/Services'
 import { Testimonials } from '@/components/Testimonials'
 import { Newsletter } from '@/components/Newsletter'
 import { Footer } from '@/components/Footer'
+import { Gallery } from '@/components/Gallery'
 
 export default function LandingPage() {
   const servicesRef = useRef<HTMLElement>(null)
@@ -20,6 +21,7 @@ export default function LandingPage() {
       <Header onServicesClick={scrollToServices} />
       <main className="flex-1">
         <Hero />
+        <Gallery />
         <Services ref={servicesRef} />
         <Testimonials />
         <Newsletter />
