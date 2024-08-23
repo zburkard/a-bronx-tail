@@ -5,7 +5,7 @@ import { Header } from '@/components/Header'
 import { Hero } from '@/components/Hero'
 import { Services } from '@/components/Services'
 import { Testimonials } from '@/components/Testimonials'
-import { Newsletter } from '@/components/Newsletter'
+import { ContactUs } from '@/components/ContactUs'
 import { Footer } from '@/components/Footer'
 import { Gallery } from '@/components/Gallery'
 
@@ -21,10 +21,10 @@ export default function LandingPage() {
       <Header onServicesClick={scrollToServices} />
       <main className="flex-1">
         <Hero />
-        <Gallery />
         <Services ref={servicesRef} />
+        <Gallery />
         <Testimonials />
-        <Newsletter />
+        <ContactUs />
       </main>
       <Footer />
     </div>
