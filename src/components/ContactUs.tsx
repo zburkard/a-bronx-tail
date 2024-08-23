@@ -1,12 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, forwardRef } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "@/components/ui/use-toast"
 
-export function ContactUs() {
+export const ContactUs = forwardRef<HTMLElement>(function ContactUs(props, ref) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
@@ -17,7 +17,6 @@ export function ContactUs() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Basic form validation
     if (!name || !email || !message) {
       toast({
         title: "Error",
@@ -28,15 +27,12 @@ export function ContactUs() {
       return
     }
 
-    // Here you would typically send the form data to your server
-    // For this example, we'll simulate an API call with a timeout
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000)) // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000))
       toast({
         title: "Success!",
         description: "Your message has been sent. We'll get back to you soon!",
       })
-      // Clear the form after successful submission
       setName('')
       setEmail('')
       setPhone('')
@@ -53,7 +49,7 @@ export function ContactUs() {
   }
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+    <section ref={ref} className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center space-y-4 text-center">
           <div className="space-y-2">
@@ -107,7 +103,7 @@ export function ContactUs() {
                 </label>
                 <Textarea
                   id="message"
-                  placeholder="Enter your message"
+                  placeholder="Tell us about your dog and what you're looking for!"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   required
@@ -123,4 +119,4 @@ export function ContactUs() {
       </div>
     </section>
   )
-}
+})

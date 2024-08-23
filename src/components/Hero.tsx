@@ -1,6 +1,10 @@
 import { Button } from "@/components/ui/button"
 
-export function Hero() {
+interface HeroProps {
+  onBookSessionClick: () => void
+}
+
+export function Hero({ onBookSessionClick }: HeroProps) {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
       <div className="container px-4 md:px-6">
@@ -14,8 +18,7 @@ export function Hero() {
             </p>
           </div>
           <div className="space-x-4">
-            <Button>Book a Session</Button>
-            <Button variant="outline">Learn More</Button>
+            <Button onClick={onBookSessionClick}>Book a Session</Button>
           </div>
         </div>
       </div>
